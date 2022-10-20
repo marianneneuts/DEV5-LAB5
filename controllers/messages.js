@@ -83,7 +83,25 @@ const update = (req, res) => {
     res.json(response);
 };
 
+const del = (req, res) => {
+    const id = req.params.id;
+
+    const response = {
+        status: "success",
+        message: `DELETING a message with id ${id}`,
+        data: {
+            messages : [
+                {
+                    "message" : "The message is deleted."
+                }
+            ]
+        }
+    };
+    res.json(response);
+};
+
 module.exports.getAll = getAll;
 module.exports.getId = getId;
 module.exports.create = create;
 module.exports.update = update;
+module.exports.del = del;
